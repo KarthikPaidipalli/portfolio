@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/header";
 import { BackgroundColorProvider } from "./context/context";
 import Skills from "./components/skills";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/home";
 import About from "./components/about";
 import Projects from "./components/projects";

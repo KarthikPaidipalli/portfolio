@@ -1,4 +1,3 @@
-import React from "react";
 import { useBackgroundColor } from "../context/context";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";

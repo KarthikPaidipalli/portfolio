@@ -1,4 +1,3 @@
-import React from "react";
 import { useBackgroundColor } from "../context/context";
 
 // Material UI Icons

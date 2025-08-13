@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { navItems } from "../constants/constants";
 
 export default function Header() {
-  const { darkMode, toggleBackground, bgColor, textColor } =
+  const { darkMode, toggleBackground, textColor } =
     useBackgroundColor();
   const headerBgColor = darkMode ? "bg-gray-800" : "bg-gray-100";
   const [menuOpen, setMenuOpen] = useState(false);
