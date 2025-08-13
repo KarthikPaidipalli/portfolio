@@ -24,6 +24,24 @@
   }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s forwards;
+  transform: translateY(10px);
+}
+
+
+
 .animate-wiggle {
   animation: wiggle 1s ease-in-out infinite;
 }

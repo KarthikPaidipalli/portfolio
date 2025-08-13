@@ -5,22 +5,22 @@ import BedtimeIcon from "@mui/icons-material/Bedtime";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useBackgroundColor } from "../context/context";
+import { Link } from "react-router-dom";
+import { navItems } from "../constants/constants";
 
 export default function Header() {
-  const { darkMode, toggleBackground, bgColor, textColor } = useBackgroundColor();
+  const { darkMode, toggleBackground, bgColor, textColor } =
+    useBackgroundColor();
+  const headerBgColor = darkMode ? "bg-gray-800" : "bg-gray-100";
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = ["About", "Skills", "Projects", "Contact"];
-
   return (
-    <header className={`${bgColor} ${textColor} shadow-md`}>
+    <header className={`${headerBgColor} ${textColor} shadow-md`}>
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Brand Title */}
         <h1 className="text-3xl font-bold italic bg-clip-text drop-shadow-md tracking-wider">
-          Karthik
+          <Link to={`/`}>Karthik</Link>
         </h1>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <ul className="flex gap-6 text-sm md:text-base font-medium">
             {navItems.map((item) => (
@@ -28,7 +28,7 @@ export default function Header() {
                 key={item}
                 className="hover:text-indigo-400 transition duration-300 cursor-pointer"
               >
-                {item}
+                <Link to={`${item.toLowerCase()}`}>{item}</Link>
               </li>
             ))}
           </ul>
