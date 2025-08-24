@@ -4,7 +4,7 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import { projects } from "../constants/constants";
 
 export default function Projects() {
-  const { bgColor, textColor } = useBackgroundColor();
+  const { bgColor = "bg-white", textColor = "text-gray-800" } = useBackgroundColor();
 
   const isLightBackground =
     bgColor.includes("white") || bgColor.includes("gray-50");
