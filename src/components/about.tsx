@@ -17,7 +17,6 @@ export default function About() {
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8">
-          {/* Profile Image */}
           <div className="md:w-1/3 flex justify-center">
             <div className="p-4 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
               <img
@@ -28,7 +27,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* About Card */}
           <div
             className={`${cardBg} shadow-md rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 md:w-2/3`}
           >

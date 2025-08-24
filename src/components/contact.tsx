@@ -8,9 +8,10 @@ export default function Contacts() {
 
   const isLightBackground =
     bgColor.includes("white") || bgColor.includes("gray-50");
-  const cardBg = isLightBackground
-    ? "bg-gray-100"
-    : "bg-white dark:bg-gray-800";
+
+  const cardBg = isLightBackground ? "bg-gray-100" : "bg-gray-800";
+
+  const cardText = isLightBackground ? "text-black" : "text-white";
 
   return (
     <section
@@ -21,7 +22,7 @@ export default function Contacts() {
           Contact <span className="text-indigo-500">Me</span>
         </h2>
 
-        <div className={`${cardBg} shadow-md rounded-xl p-6 mb-8`}>
+        <div className={`${cardBg} ${cardText} shadow-md rounded-xl p-6 mb-8`}>
           <div className="flex items-center gap-3 mb-4">
             <EmailIcon className="text-indigo-500" />
             <a
@@ -54,7 +55,8 @@ export default function Contacts() {
             </a>
           </div>
         </div>
-        <div className={`${cardBg} shadow-md rounded-xl p-6`}>
+
+        <div className={`${cardBg} ${cardText} shadow-md rounded-xl p-6`}>
           <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
           <form className="flex flex-col gap-4">
             <input
@@ -75,7 +77,10 @@ export default function Contacts() {
             <button
               type="submit"
               className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold transition-colors duration-300"
-              onClick={()=>(alert("There is not backend connection"))}
+              onClick={(e) => {
+                e.preventDefault();
+                alert("There is no backend connection");
+              }}
             >
               Send
             </button>
