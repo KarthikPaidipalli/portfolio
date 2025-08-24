@@ -5,9 +5,7 @@ export default function About() {
 
   const isLightBackground =
     bgColor.includes("white") || bgColor.includes("gray-50");
-  const cardBg = isLightBackground
-    ? "bg-gray-100"
-    : "bg-white dark:bg-gray-800";
+  const cardBg = isLightBackground ? "bg-gray-100" : "bg-gray-800";
 
   return (
     <section
@@ -19,10 +17,9 @@ export default function About() {
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8">
+          {/* Profile Image */}
           <div className="md:w-1/3 flex justify-center">
-            <div
-              className={`p-4 flex items-center justify-center transform transition-transform duration-300 hover:scale-105`}
-            >
+            <div className="p-4 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
               <img
                 src="https://via.placeholder.com/300"
                 alt="Karthik Paidipalli"
@@ -31,6 +28,7 @@ export default function About() {
             </div>
           </div>
 
+          {/* About Card */}
           <div
             className={`${cardBg} shadow-md rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 md:w-2/3`}
           >
@@ -46,7 +44,7 @@ export default function About() {
             </p>
 
             <p className="leading-relaxed text-lg">
-              At <strong>current company </strong>, I've worked on migrating
+              At <strong>current company</strong>, I've worked on migrating
               large-scale apps from Angular to React, building real-time
               employee attendance trackers, and developing online ordering
               platforms with complete admin dashboards in React Native. I've

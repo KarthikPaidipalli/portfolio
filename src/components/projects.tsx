@@ -4,13 +4,11 @@ import LaunchIcon from "@mui/icons-material/Launch";
 import { projects } from "../constants/constants";
 
 export default function Projects() {
-  const { bgColor = "bg-white", textColor = "text-gray-800" } = useBackgroundColor();
+  const { bgColor, textColor } = useBackgroundColor();
 
   const isLightBackground =
     bgColor.includes("white") || bgColor.includes("gray-50");
-  const cardBg = isLightBackground
-    ? "bg-gray-100"
-    : "bg-white dark:bg-gray-800";
+  const cardBg = isLightBackground ? "bg-gray-100" : "bg-gray-800";
 
   return (
     <section
@@ -35,7 +33,7 @@ export default function Projects() {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm"
+                    className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm"
                   >
                     {tech}
                   </span>
@@ -55,7 +53,7 @@ export default function Projects() {
                   href={project.codeLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-gray-600 dark:text-gray-300 hover:underline"
+                  className="flex items-center gap-1 text-gray-600 hover:underline"
                 >
                   <GitHubIcon fontSize="small" /> Code
                 </a>

@@ -1,6 +1,4 @@
-
 import { createContext, useContext, useState } from 'react';
-
 
 interface BackgroundColorContextType {
   darkMode: boolean;
@@ -9,20 +7,17 @@ interface BackgroundColorContextType {
   textColor: string;
 }
 
-
 const defaultContextValue: BackgroundColorContextType = {
-  darkMode: true,
+  darkMode: false, // default light mode
   toggleBackground: () => {},
-  bgColor: 'bg-gray-900',
-  textColor: 'text-white',
+  bgColor: 'bg-white',
+  textColor: 'text-black',
 };
 
-// 3. Create the context with the default value
 const BackgroundColorContext = createContext<BackgroundColorContextType>(defaultContextValue);
 
-// 4. Provider component
-export const BackgroundColorProvider = ({ children }:any) => {
-  const [darkMode, setDarkMode] = useState(true);
+export const BackgroundColorProvider = ({ children }: any) => {
+  const [darkMode, setDarkMode] = useState(false); // false = light mode by default
 
   const toggleBackground = () => setDarkMode((prev) => !prev);
 
@@ -30,13 +25,10 @@ export const BackgroundColorProvider = ({ children }:any) => {
   const textColor = darkMode ? 'text-white' : 'text-black';
 
   return (
-    <BackgroundColorContext.Provider
-      value={{ darkMode, toggleBackground, bgColor, textColor }}
-    >
+    <BackgroundColorContext.Provider value={{ darkMode, toggleBackground, bgColor, textColor }}>
       {children}
     </BackgroundColorContext.Provider>
   );
 };
-
 
 export const useBackgroundColor = () => useContext(BackgroundColorContext);
